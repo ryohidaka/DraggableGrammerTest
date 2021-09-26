@@ -59,6 +59,9 @@ export default {
     segments() {
       return this.textEN ? this.textEN.split(" ") : [];
     },
+    newId() {
+      return store.getters.newId;
+    },
   },
   watch: {
     textEN() {
@@ -74,6 +77,7 @@ export default {
   methods: {
     submit() {
       const answer = {
+        id: this.newId,
         question: this.textJA,
         answer: this.segments,
       };
