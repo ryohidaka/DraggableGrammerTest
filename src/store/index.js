@@ -29,9 +29,6 @@ export default new Vuex.Store({
         return test.id == id;
       });
     },
-    newId: (state) => {
-      return state.tests.length + 1;
-    },
   },
   actions: {},
   modules: {},

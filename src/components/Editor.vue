@@ -38,10 +38,12 @@
 
 <script>
 import store from "../store";
+import { uuid } from "vue-uuid";
+
 export default {
   name: "Editor",
   props: {
-    editId: Number,
+    editId: String,
   },
   data: () => ({
     dialog: false,
@@ -52,9 +54,6 @@ export default {
     segments() {
       return this.textEN ? this.textEN.split(" ") : [];
     },
-    newId() {
-      return store.getters.newId;
-    },
   },
   watch: {
     textEN() {
@@ -62,7 +61,7 @@ export default {
       this.textEN = `${this.textEN.charAt(0).toUpperCase()}${this.textEN.slice(
         1
       )}`;
-      this.textEN = this.textEN.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function (s) {
+      this.textEN = this.textEN.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
         return String.fromCharCode(s.charCodeAt(0) - 0xfee0);
       });
     },
@@ -76,7 +75,7 @@ export default {
   methods: {
     submit() {
       let answer = {
-        id: this.newId,
+        id: uuid.v1(),
         question: this.textJA,
         answer: this.segments,
       };

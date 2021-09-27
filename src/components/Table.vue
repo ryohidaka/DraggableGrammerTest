@@ -51,7 +51,7 @@ export default {
   data: () => ({
     singleSelect: false,
     selected: [],
-    editId: 0,
+    editId: "",
     headers: [
       {
         text: "Question",
