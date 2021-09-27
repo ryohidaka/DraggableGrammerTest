@@ -6,7 +6,6 @@
     :single-select="singleSelect"
     item-key="id"
     show-select
-    @click:row="handleClickRow"
   >
     <template v-slot:top>
       <v-toolbar flat>
@@ -30,21 +29,28 @@
       {{ item.answer.join(" ") }}
     </template>
 
-    <!-- テストボタン -->
+    <!-- テスト実行ボタン -->
     <template v-slot:[`item.test`]="{ item }">
-      <v-icon small @click.stop="handleClick(item.id)">
-        mdi-chat-question-outline
-      </v-icon>
+      <v-btn color="primary" @click.stop="doTest(item.id)">
+        <v-icon left> mdi-chat-question-outline </v-icon>
+        テスト
+      </v-btn>
     </template>
 
     <!-- 編集ボタン -->
     <template v-slot:[`item.edit`]="{ item }">
-      <v-icon small @click.stop="editItem(item.id)"> mdi-pencil </v-icon>
+      <v-btn color="success" @click.stop="editItem(item.id)">
+        <v-icon left> mdi-pencil </v-icon>
+        編集
+      </v-btn>
     </template>
 
     <!-- 削除ボタン -->
     <template v-slot:[`item.delete`]="{ item }">
-      <v-icon small @click.stop="deleteItem(item.id)"> mdi-delete </v-icon>
+      <v-btn color="error" @click.stop="deleteItem(item.id)">
+        <v-icon left> mdi-delete </v-icon>
+        削除
+      </v-btn>
     </template>
   </v-data-table>
 </template>
@@ -93,10 +99,7 @@ export default {
     },
   },
   methods: {
-    handleClickRow(e) {
-      this.$router.push({ path: `/test/${e.id}` });
-    },
-    handleClick(id) {
+    doTest(id) {
       this.$router.push({ path: `/test/${id}` });
     },
     editItem(id) {
