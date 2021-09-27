@@ -30,6 +30,13 @@
       {{ item.answer.join(" ") }}
     </template>
 
+    <!-- テストボタン -->
+    <template v-slot:[`item.test`]="{ item }">
+      <v-icon small @click.stop="handleClick(item.id)">
+        mdi-chat-question-outline
+      </v-icon>
+    </template>
+
     <!-- 編集ボタン -->
     <template v-slot:[`item.edit`]="{ item }">
       <v-icon small @click.stop="editItem(item.id)"> mdi-pencil </v-icon>
@@ -64,14 +71,19 @@ export default {
         width: "45%",
       },
       {
-        text: "Action",
-        value: "edit",
-        width: "5%",
+        text: "",
+        value: "test",
+        width: "4%",
       },
       {
-        text: "Action",
+        text: "",
+        value: "edit",
+        width: "3%",
+      },
+      {
+        text: "",
         value: "delete",
-        width: "5%",
+        width: "3%",
       },
     ],
   }),
@@ -83,6 +95,9 @@ export default {
   methods: {
     handleClickRow(e) {
       this.$router.push({ path: `/test/${e.id}` });
+    },
+    handleClick(id) {
+      this.$router.push({ path: `/test/${id}` });
     },
     editItem(id) {
       this.editId = id;
