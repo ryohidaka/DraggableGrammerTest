@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
-        ランダム英文法テスト(beta)
+        ランダム英文法テスト(beta) v{{ version }}
       </div>
     </v-app-bar>
 
@@ -17,7 +17,7 @@ export default {
   name: "App",
 
   data: () => ({
-    //
+    version: require("../package.json").version,
   }),
 };
 </script>
