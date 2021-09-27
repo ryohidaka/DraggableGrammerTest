@@ -6,7 +6,6 @@
     :single-select="singleSelect"
     item-key="id"
     show-select
-    @click:row="handleClickRow"
   >
     <template v-slot:top>
       <v-toolbar flat>
@@ -30,14 +29,28 @@
       {{ item.answer.join(" ") }}
     </template>
 
+    <!-- テスト実行ボタン -->
+    <template v-slot:[`item.test`]="{ item }">
+      <v-btn color="primary" @click.stop="doTest(item.id)">
+        <v-icon left> mdi-chat-question-outline </v-icon>
+        テスト
+      </v-btn>
+    </template>
+
     <!-- 編集ボタン -->
     <template v-slot:[`item.edit`]="{ item }">
-      <v-icon small @click.stop="editItem(item.id)"> mdi-pencil </v-icon>
+      <v-btn color="success" @click.stop="editItem(item.id)">
+        <v-icon left> mdi-pencil </v-icon>
+        編集
+      </v-btn>
     </template>
 
     <!-- 削除ボタン -->
     <template v-slot:[`item.delete`]="{ item }">
-      <v-icon small @click.stop="deleteItem(item.id)"> mdi-delete </v-icon>
+      <v-btn color="error" @click.stop="deleteItem(item.id)">
+        <v-icon left> mdi-delete </v-icon>
+        削除
+      </v-btn>
     </template>
   </v-data-table>
 </template>
@@ -64,14 +77,19 @@ export default {
         width: "45%",
       },
       {
-        text: "Action",
-        value: "edit",
-        width: "5%",
+        text: "",
+        value: "test",
+        width: "4%",
       },
       {
-        text: "Action",
+        text: "",
+        value: "edit",
+        width: "3%",
+      },
+      {
+        text: "",
         value: "delete",
-        width: "5%",
+        width: "3%",
       },
     ],
   }),
@@ -81,8 +99,8 @@ export default {
     },
   },
   methods: {
-    handleClickRow(e) {
-      this.$router.push({ path: `/test/${e.id}` });
+    doTest(id) {
+      this.$router.push({ path: `/test/${id}` });
     },
     editItem(id) {
       this.editId = id;
