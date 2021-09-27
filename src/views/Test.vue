@@ -1,15 +1,30 @@
 <template>
-  <div class="test">
-    <p>Q</p>
-    <p>{{ test.question }}</p>
+  <v-container>
+    <v-col cols="12" md="10">
+      <v-row>
+        <h2>
+          <v-icon>mdi-chat-question-outline</v-icon>
+          {{ test.question }}
+        </h2>
+      </v-row>
 
-    <p>A</p>
-    <draggable v-model="items">
-      <span v-for="word in items" :key="word">{{ word }}</span>
-    </draggable>
-
-    <button @click="submit">回答</button>
-  </div>
+      <v-col>
+        <v-icon>mdi-alpha-a-circle-outline</v-icon>
+      </v-col>
+      <v-col align="center" justify="center">
+        <v-chip-group>
+          <draggable v-model="items">
+            <v-chip v-for="word in items" :key="word" x-large>
+              {{ word }}
+            </v-chip>
+          </draggable>
+        </v-chip-group>
+      </v-col>
+      <v-col align="center" justify="center">
+        <v-btn x-large color="success" @click="submit"> 回答 </v-btn>
+      </v-col>
+    </v-col>
+  </v-container>
 </template>
 
 <script>
