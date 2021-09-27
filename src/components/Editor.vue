@@ -61,7 +61,7 @@ export default {
       this.textEN = `${this.textEN.charAt(0).toUpperCase()}${this.textEN.slice(
         1
       )}`;
-      this.textEN = this.textEN.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+      this.textEN = this.textEN.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function (s) {
         return String.fromCharCode(s.charCodeAt(0) - 0xfee0);
       });
     },
