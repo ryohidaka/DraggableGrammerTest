@@ -51,7 +51,7 @@ export default {
     items: [],
   }),
   mounted() {
-    this.items = this.test.answer.sort(() => Math.random() - 0.5);
+    this.items = Array.from(this.test.answer).sort(() => Math.random() - 0.5);
   },
   computed: {
     id() {
