@@ -37,6 +37,29 @@
         <v-btn x-large color="success" @click="submit"> 回答 </v-btn>
       </v-col>
     </v-col>
+
+    <v-dialog v-model="dialog" width="500">
+      <v-card>
+        <v-card-title class="text-h3 text-center" color="error">
+          {{ isCorrect ? "正解" : "不正解" }}
+        </v-card-title>
+        <v-img v-if="isCorrect" src="@/assets/correct.png" contain />
+        <v-img v-else src="@/assets/false.png" contain />
+
+        <v-divider></v-divider>
+
+        <v-card-actions v-if="!isCorrect">
+          <v-btn block @click="dialog = false">
+            もう一度挑戦する
+          </v-btn>
+        </v-card-actions>
+        <v-card-actions>
+          <v-btn block to="/">
+            問題一覧に戻る
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-row>
 </template>
 
@@ -49,6 +72,8 @@ export default {
   components: { draggable },
   data: () => ({
     items: [],
+    dialog: false,
+    isCorrect: false,
   }),
   mounted() {
     this.items = Array.from(this.test.answer).sort(() => Math.random() - 0.5);
@@ -63,11 +88,10 @@ export default {
   },
   methods: {
     submit() {
-      if (this.test.answer === this.items) {
-        alert("正解");
-      } else {
-        alert("不正解");
+      if (this.test.answer.join(" ") == this.items.join(" ")) {
+        this.isCorrect = true;
       }
+      this.dialog = true;
     },
   },
 };
