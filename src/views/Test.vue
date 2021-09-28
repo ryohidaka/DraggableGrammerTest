@@ -38,7 +38,7 @@ export default {
     items: [],
   }),
   mounted() {
-    this.items = this.test.answer;
+    this.items = this.test.answer.sort(() => Math.random() - 0.5);
   },
   computed: {
     id() {
