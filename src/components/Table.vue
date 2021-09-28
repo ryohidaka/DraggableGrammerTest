@@ -31,7 +31,7 @@
 
     <!-- テスト実行ボタン -->
     <template v-slot:[`item.test`]="{ item }">
-      <v-btn color="primary" @click.stop="doTest(item.id)">
+      <v-btn color="primary" :to="`/test/${item.id}`">
         <v-icon left> mdi-chat-question-outline </v-icon>
         テスト
       </v-btn>
@@ -69,12 +69,17 @@ export default {
       {
         text: "Question",
         value: "question",
-        width: "45%",
+        width: "30%",
       },
       {
         text: "Answer",
         value: "answer",
-        width: "45%",
+        width: "30%",
+      },
+      {
+        text: "Category",
+        value: "category",
+        width: "30%",
       },
       {
         text: "",
@@ -99,9 +104,6 @@ export default {
     },
   },
   methods: {
-    doTest(id) {
-      this.$router.push({ path: `/test/${id}` });
-    },
     editItem(id) {
       this.editId = id;
     },
