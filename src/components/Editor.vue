@@ -10,6 +10,13 @@
         <v-text-field v-model="textJA" label="日本語文" required></v-text-field>
         <v-text-field v-model="textEN" label="英文" required></v-text-field>
       </v-card-text>
+      <v-card-text>
+        <v-text-field
+          v-model="category"
+          label="カテゴリー"
+          required
+        ></v-text-field>
+      </v-card-text>
 
       <v-card-title class="text-h5">自動分割 </v-card-title>
 
@@ -49,6 +56,7 @@ export default {
     dialog: false,
     textJA: "",
     textEN: "",
+    category: "",
   }),
   computed: {
     segments() {
@@ -70,6 +78,7 @@ export default {
       const test = store.getters["test"](this.editId);
       this.textJA = test.question;
       this.textEN = test.answer.join(" ");
+      this.category = test.category;
     },
   },
   methods: {
@@ -78,6 +87,7 @@ export default {
         id: uuid.v1(),
         question: this.textJA,
         answer: this.segments,
+        category: this.category,
       };
       if (this.editId) {
         answer.id = this.editId;

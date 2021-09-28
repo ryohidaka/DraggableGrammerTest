@@ -69,12 +69,17 @@ export default {
       {
         text: "Question",
         value: "question",
-        width: "45%",
+        width: "30%",
       },
       {
         text: "Answer",
         value: "answer",
-        width: "45%",
+        width: "30%",
+      },
+      {
+        text: "Category",
+        value: "category",
+        width: "30%",
       },
       {
         text: "",
