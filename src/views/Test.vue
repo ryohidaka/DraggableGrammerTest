@@ -49,14 +49,10 @@
         <v-divider></v-divider>
 
         <v-card-actions v-if="!isCorrect">
-          <v-btn block @click="dialog = false">
-            もう一度挑戦する
-          </v-btn>
+          <v-btn block @click="dialog = false"> もう一度挑戦する </v-btn>
         </v-card-actions>
         <v-card-actions>
-          <v-btn block to="/">
-            問題一覧に戻る
-          </v-btn>
+          <v-btn block to="/"> 問題一覧に戻る </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
