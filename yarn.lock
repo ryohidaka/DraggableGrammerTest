@@ -1099,10 +1099,10 @@
   dependencies:
     source-map "^0.6.1"
 
-"@types/uuid@^8.0.0":
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.1.tgz#1a32969cf8f0364b3d8c8af9cc3555b7805df14f"
-  integrity sha512-Y2mHTRAbqfFkpjldbkHGY8JIzRN6XqYRliG8/24FcHm2D2PwW24fl5xMRTVGdrb7iMrwCaIEbLWerGIkXuFWVg==
+"@types/uuid@^8.3.4":
+  version "8.3.4"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.4.tgz#bd86a43617df0594787d38b735f55c805becf1bc"
+  integrity sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==
 
 "@types/webpack-dev-server@^3.11.0":
   version "3.11.6"
@@ -8667,7 +8667,7 @@ uuid@^3.3.2, uuid@^3.4.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-uuid@^8.1.0:
+uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
@@ -8782,13 +8782,13 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue-uuid@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/vue-uuid/-/vue-uuid-2.0.2.tgz#0cfb739e660a3af1d4e3342743578114f79b2438"
-  integrity sha512-PRf1CHg3uKi77bVRyAuW2u/T2PO9LxMr7cw9t9rNdpZTkNDyw1Fx6eJVL+8JOtM9VxxPkoZ/rwhXJ5l+X5AYzQ==
+vue-uuid@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vue-uuid/-/vue-uuid-2.1.0.tgz#1f857587386e497337bd6a33b84a15482fde75b2"
+  integrity sha512-op87iCW3uePeas6+aIDCjm1UM6yHkzTyG1CIKsQunh94jVKt/bC2928GDrgX8ibak7QPcznb6ebwfCex7CjuyQ==
   dependencies:
-    "@types/uuid" "^8.0.0"
-    uuid "^8.1.0"
+    "@types/uuid" "^8.3.4"
+    uuid "^8.3.2"
 
 vue@^2.6.11:
   version "2.6.14"
