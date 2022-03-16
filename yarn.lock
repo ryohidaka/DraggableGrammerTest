@@ -2264,12 +2264,12 @@
     webpack "^4.0.0"
     yorkie "^2.0.0"
 
-"@vue/cli-plugin-pwa@~5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-pwa/-/cli-plugin-pwa-5.0.1.tgz#aa9dced999205190525eaf41500c3d1a5e4bdb10"
-  integrity sha512-xEiG35gevz8Jwba0nIhqlgTNu65VemMJfsAv92kZm7dh0el33s21b2YmgzL+ROcgHtVZAtWNzHIiXXf6Bq29eA==
+"@vue/cli-plugin-pwa@~5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-pwa/-/cli-plugin-pwa-5.0.3.tgz#5e3996804150f1e360ddb879b226f19e57609b38"
+  integrity sha512-fYCo0wsx6eRx0Okz/ElRhyFO/uLIi98xUAtZFVs8lCKt+B4yKXXlhQBo+K3RXl1XuQMCqlOumT7ZgFIyciZrMw==
   dependencies:
-    "@vue/cli-shared-utils" "^5.0.1"
+    "@vue/cli-shared-utils" "^5.0.3"
     html-webpack-plugin "^5.1.0"
     webpack "^5.54.0"
     workbox-webpack-plugin "^6.1.0"
@@ -2379,7 +2379,7 @@
     semver "^6.1.0"
     strip-ansi "^6.0.0"
 
-"@vue/cli-shared-utils@^5.0.1", "@vue/cli-shared-utils@^5.0.3":
+"@vue/cli-shared-utils@^5.0.3":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-5.0.3.tgz#e8facc759f4e2ceed4a26f33943c0005a834e4af"
   integrity sha512-xAHxFDYVohHWXOLdmGvka3ffQcRgKdACempFQkGJX74Q7OBf0zPf5WH+vQXhlR17eA3LmWdY+Nv8OfsIGim6Fg==
