@@ -11,7 +11,7 @@
     "core-js": "^3.22.7",
     "register-service-worker": "^1.7.1",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.16",
+    "vue-router": "^4.1.0",
     "vue-uuid": "^3.0.0",
     "vuedraggable": "^2.24.3",
     "vuetify": "^2.6.6",
